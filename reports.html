@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible Enterprise Dashboard - Analytics, financial auditing, and compliance report generation.">
+  <title>Analytics &amp; Reports | Accessible Enterprise Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Accessible Header Landmark -->
+  <header class="app-header" aria-label="EnterpriseCore site header">
+    <section class="header-brand-group" aria-label="Brand identifier and navigation control">
+      <button type="button" class="mobile-nav-toggle" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <a href="index.html" class="brand-link" aria-label="Accessible Enterprise Dashboard Home">
+        <img src="assets/images/logo.svg" alt="" width="36" height="36" aria-hidden="true">
+        <span class="brand-title">EnterpriseCore</span>
+      </a>
+    </section>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <ul class="primary-nav-list">
+        <li>
+          <a href="index.html" class="nav-link">Overview</a>
+        </li>
+        <li>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </li>
+        <li>
+          <a href="reports.html" class="nav-link" aria-current="page">Reports</a>
+        </li>
+        <li>
+          <a href="users.html" class="nav-link">Users</a>
+        </li>
+        <li>
+          <a href="settings.html" class="nav-link">Settings</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="header-actions" aria-label="User notifications and profile">
+      <button type="button" class="header-action-btn" aria-label="Notifications: 3 unread updates">
+        <span aria-hidden="true">&#128276;</span>
+        <span class="notification-badge" aria-hidden="true">3</span>
+        <span class="sr-only">3 unread notifications</span>
+      </button>
+
+      <a href="settings.html" class="user-profile-badge" aria-label="User Profile: Alex Morgan, Administrator">
+        <span class="avatar-circle" aria-hidden="true">AM</span>
+        <span class="profile-name">Alex Morgan</span>
+      </a>
+    </section>
+  </header>
+
+  <!-- Accessible Sidebar Navigation -->
+  <aside class="app-sidebar" aria-label="Sidebar navigation">
+    <nav class="sidebar-nav" id="sidebar-nav" aria-label="Sidebar navigation">
+      <section class="sidebar-nav-section" aria-labelledby="sidebar-main-title">
+        <h2 id="sidebar-main-title" class="sidebar-heading">Main Navigation</h2>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="index.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="sidebar-link" aria-current="page">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+              </svg>
+              <span>Analytics &amp; Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <span>Users</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="sidebar-nav-section" aria-labelledby="sidebar-config-title">
+        <h2 id="sidebar-config-title" class="sidebar-heading">System &amp; Help</h2>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="settings.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html#help-support" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/>
+              </svg>
+              <span>Help &amp; Support</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="sidebar-footer-note">
+        <p><strong>System Status:</strong> <span class="badge badge-active badge-live">Operational</span></p>
+        <p class="mb-0 fs-xs">WCAG 2.1 AA Certified</p>
+      </footer>
+    </nav>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="app-main">
+    <!-- Reports Page Header -->
+    <header class="page-header-section" aria-label="Reports header and export actions">
+      <section class="header-text-block">
+        <h1 id="page-title">Enterprise Analytics &amp; Reports</h1>
+        <p>Analyze performance metrics, filter historical audit trails, and export certified records.</p>
+      </section>
+
+      <section class="page-actions-group" aria-label="Export actions">
+        <button type="button" class="btn btn-primary" onclick="alert('CSV Export generated successfully.');">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+          </svg>
+          <span>Export CSV</span>
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="alert('PDF Report compilation started.');">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/>
+          </svg>
+          <span>Export PDF</span>
+        </button>
+      </section>
+    </header>
+
+    <!-- Report Summary Cards -->
+    <section aria-labelledby="report-kpi-heading">
+      <h2 id="report-kpi-heading" class="sr-only">Report Summary Indicators</h2>
+      <section class="stats-grid">
+        <article class="stat-card" aria-labelledby="rep-stat-1">
+          <header class="stat-header">
+            <h3 id="rep-stat-1" class="stat-label">Total Reports Generated</h3>
+            <span class="stat-icon" aria-hidden="true">&#128196;</span>
+          </header>
+          <data class="stat-value" value="142">142</data>
+          <p class="stat-trend trend-up">
+            <span aria-hidden="true">&#9650;</span>
+            <span>+18 this month</span>
+          </p>
+        </article>
+
+        <article class="stat-card" aria-labelledby="rep-stat-2">
+          <header class="stat-header">
+            <h3 id="rep-stat-2" class="stat-label">Audit Pass Rate</h3>
+            <span class="stat-icon" aria-hidden="true">&#10003;</span>
+          </header>
+          <data class="stat-value" value="98.7">98.7%</data>
+          <p class="stat-trend trend-up">
+            <span aria-hidden="true">&#9650;</span>
+            <span>+0.5% above baseline</span>
+          </p>
+        </article>
+
+        <article class="stat-card" aria-labelledby="rep-stat-3">
+          <header class="stat-header">
+            <h3 id="rep-stat-3" class="stat-label">Security Compliance Checks</h3>
+            <span class="stat-icon" aria-hidden="true">&#128737;</span>
+          </header>
+          <data class="stat-value" value="512">512</data>
+          <p class="stat-trend trend-neutral">
+            <span aria-hidden="true">&#9644;</span>
+            <span>100% evaluated</span>
+          </p>
+        </article>
+
+        <article class="stat-card" aria-labelledby="rep-stat-4">
+          <header class="stat-header">
+            <h3 id="rep-stat-4" class="stat-label">Critical Findings Pending</h3>
+            <span class="stat-icon" aria-hidden="true">&#9888;</span>
+          </header>
+          <data class="stat-value" value="0">0</data>
+          <p class="stat-trend trend-up">
+            <span aria-hidden="true">&#10003;</span>
+            <span>Zero critical vulnerabilities</span>
+          </p>
+        </article>
+      </section>
+    </section>
+
+    <!-- Accessible Filter Form with Date Ranges -->
+    <section class="dashboard-panel" aria-labelledby="filter-heading">
+      <header class="panel-header">
+        <h2 id="filter-heading">Filter &amp; Query Reports</h2>
+      </header>
+
+      <form id="filter-form" class="accessible-form" novalidate>
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Report Query Parameters</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="filter-report-type" class="form-label">
+                Report Type <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="filter-report-type"
+                name="report_type"
+                class="form-control"
+                required
+                aria-required="true"
+                aria-describedby="filter-report-type-error"
+              >
+                <option value="">-- Select Report Type --</option>
+                <option value="financial">Financial Audit</option>
+                <option value="security">Security &amp; Access Controls</option>
+                <option value="compliance">WCAG Accessibility Compliance</option>
+                <option value="workforce">Workforce Utilization</option>
+              </select>
+              <p id="filter-report-type-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="filter-start-date" class="form-label">
+                Start Date <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="date"
+                id="filter-start-date"
+                name="start_date"
+                class="form-control"
+                required
+                value="2026-08-01"
+                aria-required="true"
+                aria-describedby="filter-start-date-error"
+              >
+              <p id="filter-start-date-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="filter-end-date" class="form-label">
+                End Date <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="date"
+                id="filter-end-date"
+                name="end_date"
+                class="form-control"
+                required
+                value="2026-09-17"
+                aria-required="true"
+                aria-describedby="filter-end-date-error"
+              >
+              <p id="filter-end-date-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="filter-status" class="form-label">Report Status</label>
+              <select id="filter-status" name="status" class="form-control">
+                <option value="all">All Statuses</option>
+                <option value="approved">Approved</option>
+                <option value="pending">Pending Review</option>
+                <option value="archived">Archived</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <section class="form-actions-end">
+          <button type="reset" class="btn btn-secondary">Reset Query</button>
+          <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </section>
+      </form>
+    </section>
+
+    <!-- Accessible Reports Data Table -->
+    <section class="dashboard-panel" aria-labelledby="reports-table-heading">
+      <header class="panel-header">
+        <h2 id="reports-table-heading">Generated Compliance &amp; Audit Logs</h2>
+      </header>
+
+      <section class="table-responsive-container" tabindex="0" aria-label="Generated Reports Table, use arrow keys to navigate horizontally">
+        <table class="data-table">
+          <caption>Official Enterprise Audit &amp; Activity Reports (2026)</caption>
+          <thead>
+            <tr>
+              <th scope="col" data-sortable aria-sort="none">Report ID</th>
+              <th scope="col" data-sortable aria-sort="ascending">Report Title</th>
+              <th scope="col" data-sortable aria-sort="none">Category</th>
+              <th scope="col" data-sortable aria-sort="none">Generated Date</th>
+              <th scope="col" data-sortable aria-sort="none">Lead Officer</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>REP-2026-001</td>
+              <th scope="row">Q3 Accessibility Conformance Evaluation</th>
+              <td>Compliance</td>
+              <td><time datetime="2026-09-15">Sep 15, 2026</time></td>
+              <td>Alex Morgan</td>
+              <td>
+                <span class="badge badge-active">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Approved</span>
+                </span>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Download Q3 Accessibility Conformance Evaluation (PDF)"
+                  onclick="alert('Downloading REP-2026-001...');"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>REP-2026-002</td>
+              <th scope="row">Workforce Access Credentials Audit</th>
+              <td>Security</td>
+              <td><time datetime="2026-09-12">Sep 12, 2026</time></td>
+              <td>Elena Rostova</td>
+              <td>
+                <span class="badge badge-active">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Approved</span>
+                </span>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Download Workforce Access Credentials Audit (PDF)"
+                  onclick="alert('Downloading REP-2026-002...');"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>REP-2026-003</td>
+              <th scope="row">Fiscal Operations &amp; Budget Reconciliation</th>
+              <td>Financial</td>
+              <td><time datetime="2026-09-10">Sep 10, 2026</time></td>
+              <td>Marcus Vance</td>
+              <td>
+                <span class="badge badge-pending">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Pending</span>
+                </span>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Download Fiscal Operations & Budget Reconciliation (PDF)"
+                  onclick="alert('Downloading REP-2026-003...');"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>REP-2026-004</td>
+              <th scope="row">Customer Acquisition Metric Stream</th>
+              <td>Marketing</td>
+              <td><time datetime="2026-09-08">Sep 08, 2026</time></td>
+              <td>Sarah Connor</td>
+              <td>
+                <span class="badge badge-active">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Approved</span>
+                </span>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Download Customer Acquisition Metric Stream (PDF)"
+                  onclick="alert('Downloading REP-2026-004...');"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>REP-2026-005</td>
+              <th scope="row">HR Diversity and Inclusion Metric Review</th>
+              <td>Human Resources</td>
+              <td><time datetime="2026-09-01">Sep 01, 2026</time></td>
+              <td>David Chen</td>
+              <td>
+                <span class="badge badge-inactive">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Archived</span>
+                </span>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  aria-label="Download HR Diversity and Inclusion Metric Review (PDF)"
+                  onclick="alert('Downloading REP-2026-005...');"
+                >
+                  Download
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <!-- Accessible Footer Landmark -->
+  <footer class="app-footer">
+    <p>&copy; 2026 EnterpriseCore Systems Inc. All rights reserved.</p>
+    <nav aria-label="Footer legal and accessibility links">
+      <ul class="footer-nav-list">
+        <li><a href="settings.html#accessibility" class="footer-link">Accessibility Statement</a></li>
+        <li><a href="settings.html#privacy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="settings.html#terms" class="footer-link">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Live Announcer Region for Screen Readers -->
+  <p id="live-announcer" aria-live="polite" class="sr-only"></p>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!-- Component: Accessible Data Table -->
+<section aria-labelledby="table-section-heading">
+  <h2 id="table-section-heading" class="sr-only">Employee Directory Table View</h2>
+
+  <section class="table-responsive-container" tabindex="0" aria-label="Employee Directory Table, scrollable horizontally with arrow keys">
+    <table class="data-table">
+      <caption>Enterprise Employee Directory &amp; Permissions Overview</caption>
+      <thead>
+        <tr>
+          <th scope="col" data-sortable aria-sort="none">User ID</th>
+          <th scope="col" data-sortable aria-sort="ascending">Name</th>
+          <th scope="col" data-sortable aria-sort="none">Email</th>
+          <th scope="col" data-sortable aria-sort="none">Department</th>
+          <th scope="col" data-sortable aria-sort="none">Role</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-dept="Engineering">
+          <td>USR-1001</td>
+          <th scope="row">Alex Morgan</th>
+          <td>alex.morgan@enterprise.corp</td>
+          <td>Engineering</td>
+          <td>Lead Architect</td>
+          <td>
+            <span class="badge badge-active">
+              <span aria-hidden="true">&#9679;</span>
+              <span>Active</span>
+            </span>
+          </td>
+          <td>
+            <nav class="table-actions-cell" aria-label="Actions for Alex Morgan">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-open-modal="user-modal"
+                data-modal-mode="edit"
+                data-user-name="Alex Morgan"
+                data-user-email="alex.morgan@enterprise.corp"
+                data-user-dept="Engineering"
+                data-user-role="Administrator"
+                aria-label="Edit user Alex Morgan"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-action="delete-user"
+                data-user-name="Alex Morgan"
+                aria-label="Delete user Alex Morgan"
+              >
+                Delete
+              </button>
+            </nav>
+          </td>
+        </tr>
+
+        <tr data-dept="Product">
+          <td>USR-1002</td>
+          <th scope="row">Elena Rostova</th>
+          <td>elena.rostova@enterprise.corp</td>
+          <td>Product</td>
+          <td>Senior Product Designer</td>
+          <td>
+            <span class="badge badge-active">
+              <span aria-hidden="true">&#9679;</span>
+              <span>Active</span>
+            </span>
+          </td>
+          <td>
+            <nav class="table-actions-cell" aria-label="Actions for Elena Rostova">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-open-modal="user-modal"
+                data-modal-mode="edit"
+                data-user-name="Elena Rostova"
+                data-user-email="elena.rostova@enterprise.corp"
+                data-user-dept="Product"
+                data-user-role="Staff"
+                aria-label="Edit user Elena Rostova"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-action="delete-user"
+                data-user-name="Elena Rostova"
+                aria-label="Delete user Elena Rostova"
+              >
+                Delete
+              </button>
+            </nav>
+          </td>
+        </tr>
+
+        <tr data-dept="Finance">
+          <td>USR-1003</td>
+          <th scope="row">Marcus Vance</th>
+          <td>marcus.vance@enterprise.corp</td>
+          <td>Finance</td>
+          <td>Financial Controller</td>
+          <td>
+            <span class="badge badge-pending">
+              <span aria-hidden="true">&#9679;</span>
+              <span>Pending</span>
+            </span>
+          </td>
+          <td>
+            <nav class="table-actions-cell" aria-label="Actions for Marcus Vance">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-open-modal="user-modal"
+                data-modal-mode="edit"
+                data-user-name="Marcus Vance"
+                data-user-email="marcus.vance@enterprise.corp"
+                data-user-dept="Finance"
+                data-user-role="Manager"
+                aria-label="Edit user Marcus Vance"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-action="delete-user"
+                data-user-name="Marcus Vance"
+                aria-label="Delete user Marcus Vance"
+              >
+                Delete
+              </button>
+            </nav>
+          </td>
+        </tr>
+
+        <tr data-dept="Marketing">
+          <td>USR-1004</td>
+          <th scope="row">Sarah Connor</th>
+          <td>sarah.connor@enterprise.corp</td>
+          <td>Marketing</td>
+          <td>Growth Marketing Specialist</td>
+          <td>
+            <span class="badge badge-active">
+              <span aria-hidden="true">&#9679;</span>
+              <span>Active</span>
+            </span>
+          </td>
+          <td>
+            <nav class="table-actions-cell" aria-label="Actions for Sarah Connor">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-open-modal="user-modal"
+                data-modal-mode="edit"
+                data-user-name="Sarah Connor"
+                data-user-email="sarah.connor@enterprise.corp"
+                data-user-dept="Marketing"
+                data-user-role="Staff"
+                aria-label="Edit user Sarah Connor"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-action="delete-user"
+                data-user-name="Sarah Connor"
+                aria-label="Delete user Sarah Connor"
+              >
+                Delete
+              </button>
+            </nav>
+          </td>
+        </tr>
+
+        <tr data-dept="Human Resources">
+          <td>USR-1005</td>
+          <th scope="row">David Chen</th>
+          <td>david.chen@enterprise.corp</td>
+          <td>Human Resources</td>
+          <td>HR Operations Partner</td>
+          <td>
+            <span class="badge badge-inactive">
+              <span aria-hidden="true">&#9679;</span>
+              <span>Inactive</span>
+            </span>
+          </td>
+          <td>
+            <nav class="table-actions-cell" aria-label="Actions for David Chen">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-open-modal="user-modal"
+                data-modal-mode="edit"
+                data-user-name="David Chen"
+                data-user-email="david.chen@enterprise.corp"
+                data-user-dept="Human Resources"
+                data-user-role="Staff"
+                aria-label="Edit user David Chen"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                data-action="delete-user"
+                data-user-name="David Chen"
+                aria-label="Delete user David Chen"
+              >
+                Delete
+              </button>
+            </nav>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <nav class="table-pagination" aria-label="Table pagination">
+    <p class="mb-0 fs-sm">Showing <strong>1</strong> to <strong>5</strong> of <strong>24</strong> entries</p>
+    <ul class="pagination-controls">
+      <li>
+        <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Previous</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-primary btn-sm" aria-current="page" aria-label="Page 1, current page">1</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-secondary btn-sm" aria-label="Go to page 2">2</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-secondary btn-sm" aria-label="Go to page 3">3</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-secondary btn-sm" aria-label="Go to next page">Next</button>
+      </li>
+    </ul>
+  </nav>
+</section>

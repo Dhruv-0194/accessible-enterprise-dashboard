@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible Enterprise Dashboard - User profile, system security, notification preferences, and WCAG accessibility options.">
+  <title>Settings &amp; Accessibility | Accessible Enterprise Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Accessible Header Landmark -->
+  <header class="app-header" aria-label="EnterpriseCore site header">
+    <section class="header-brand-group" aria-label="Brand identifier and navigation control">
+      <button type="button" class="mobile-nav-toggle" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <a href="index.html" class="brand-link" aria-label="Accessible Enterprise Dashboard Home">
+        <img src="assets/images/logo.svg" alt="" width="36" height="36" aria-hidden="true">
+        <span class="brand-title">EnterpriseCore</span>
+      </a>
+    </section>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <ul class="primary-nav-list">
+        <li>
+          <a href="index.html" class="nav-link">Overview</a>
+        </li>
+        <li>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </li>
+        <li>
+          <a href="reports.html" class="nav-link">Reports</a>
+        </li>
+        <li>
+          <a href="users.html" class="nav-link">Users</a>
+        </li>
+        <li>
+          <a href="settings.html" class="nav-link" aria-current="page">Settings</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="header-actions" aria-label="User notifications and profile">
+      <button type="button" class="header-action-btn" aria-label="Notifications: 3 unread updates">
+        <span aria-hidden="true">&#128276;</span>
+        <span class="notification-badge" aria-hidden="true">3</span>
+        <span class="sr-only">3 unread notifications</span>
+      </button>
+
+      <a href="settings.html" class="user-profile-badge" aria-label="User Profile: Alex Morgan, Administrator">
+        <span class="avatar-circle" aria-hidden="true">AM</span>
+        <span class="profile-name">Alex Morgan</span>
+      </a>
+    </section>
+  </header>
+
+  <!-- Accessible Sidebar Navigation -->
+  <aside class="app-sidebar" aria-label="Sidebar navigation">
+    <nav class="sidebar-nav" id="sidebar-nav" aria-label="Sidebar navigation">
+      <section class="sidebar-nav-section" aria-labelledby="sidebar-main-title">
+        <h2 id="sidebar-main-title" class="sidebar-heading">Main Navigation</h2>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="index.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+              </svg>
+              <span>Analytics &amp; Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <span>Users</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="sidebar-nav-section" aria-labelledby="sidebar-config-title">
+        <h2 id="sidebar-config-title" class="sidebar-heading">System &amp; Help</h2>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="settings.html" class="sidebar-link" aria-current="page">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#help-support" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/>
+              </svg>
+              <span>Help &amp; Support</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="sidebar-footer-note">
+        <p><strong>System Status:</strong> <span class="badge badge-active badge-live">Operational</span></p>
+        <p class="mb-0 fs-xs">WCAG 2.1 AA Certified</p>
+      </footer>
+    </nav>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="app-main">
+    <header class="page-header-section" aria-label="Settings page title">
+      <section class="header-text-block">
+        <h1 id="page-title">Enterprise System Settings</h1>
+        <p>Manage personal credentials, system notification frequencies, security protocols, and accessibility adaptations.</p>
+      </section>
+    </header>
+
+    <form id="settings-form" class="accessible-form" novalidate>
+      <!-- Section 1: Accessibility & Display Preferences -->
+      <fieldset class="form-fieldset" id="accessibility">
+        <legend class="form-legend">Accessibility &amp; Assistive Preferences</legend>
+        <p>Adapt contrast levels, typography scales, and motion behaviors to suit your assistive preferences. Changes persist locally.</p>
+
+        <section class="form-grid">
+          <div class="form-group">
+            <label for="pref-theme" class="form-label">Visual Color Theme</label>
+            <select id="pref-theme" class="form-control">
+              <option value="light">Standard Light Mode</option>
+              <option value="dark">Dark Theme (Reduced Glare)</option>
+            </select>
+            <p class="form-hint">Adjust background and surface luminance</p>
+          </div>
+
+          <div class="form-group">
+            <label for="pref-font-size" class="form-label">Font Sizing Scale</label>
+            <select id="pref-font-size" class="form-control">
+              <option value="normal">Default (16px / 1.0rem)</option>
+              <option value="large">Large (18px / 1.125rem)</option>
+              <option value="x-large">Extra Large (20px / 1.25rem)</option>
+            </select>
+            <p class="form-hint">Increases base font size and line height across all views</p>
+          </div>
+        </section>
+
+        <section class="checkbox-group mt-lg">
+          <div class="check-item">
+            <input type="checkbox" id="pref-high-contrast" name="high_contrast">
+            <label for="pref-high-contrast" class="check-label">
+              <strong>High Contrast Mode</strong> (Maximizes black &amp; white borders, removes subtle gradients, conforms to WCAG AAA contrast ratio &gt; 14:1)
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="pref-reduce-motion" name="reduce_motion">
+            <label for="pref-reduce-motion" class="check-label">
+              <strong>Reduce Motion &amp; Animations</strong> (Disables transitions and dynamic slide effects for vestibular comfort)
+            </label>
+          </div>
+        </section>
+      </fieldset>
+
+      <!-- Section 2: User Profile Settings -->
+      <fieldset class="form-fieldset" id="profile">
+        <legend class="form-legend">User Profile Information</legend>
+
+        <section class="form-grid">
+          <div class="form-group">
+            <label for="prof-name" class="form-label">
+              Display Name <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="prof-name"
+              name="prof_name"
+              class="form-control"
+              value="Alex Morgan"
+              required
+              aria-required="true"
+              aria-describedby="prof-name-error"
+            >
+            <p id="prof-name-error" class="form-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="prof-email" class="form-label">
+              Corporate Email <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="prof-email"
+              name="prof_email"
+              class="form-control"
+              value="alex.morgan@enterprise.corp"
+              required
+              aria-required="true"
+              aria-describedby="prof-email-error"
+            >
+            <p id="prof-email-error" class="form-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="prof-title" class="form-label">Official Job Title</label>
+            <input
+              type="text"
+              id="prof-title"
+              name="prof_title"
+              class="form-control"
+              value="Lead Enterprise Architect"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="prof-dept" class="form-label">Assigned Department</label>
+            <input
+              type="text"
+              id="prof-dept"
+              name="prof_dept"
+              class="form-control"
+              value="Engineering &amp; Infrastructure"
+              readonly
+            >
+            <p class="form-hint">Department assignment must be requested through HR Operations</p>
+          </div>
+        </section>
+      </fieldset>
+
+      <!-- Section 3: Notification Settings -->
+      <fieldset class="form-fieldset" id="notifications">
+        <legend class="form-legend">Enterprise Notification Preferences</legend>
+        <p>Select which events trigger automated notifications and email dispatches.</p>
+
+        <section class="checkbox-group">
+          <div class="check-item">
+            <input type="checkbox" id="notify-security" name="notify_security" checked>
+            <label for="notify-security" class="check-label">
+              <strong>Critical Security Alerts</strong> (Immediate notification of failed login attempts or permission modifications)
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="notify-reports" name="notify_reports" checked>
+            <label for="notify-reports" class="check-label">
+              <strong>Weekly Audit &amp; Report Summaries</strong> (Executive briefing delivered every Monday at 08:00 UTC)
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="notify-team" name="notify_team">
+            <label for="notify-team" class="check-label">
+              <strong>Team Onboarding Notifications</strong> (Notifies when new staff members join your department)
+            </label>
+          </div>
+
+          <div class="check-item">
+            <input type="checkbox" id="notify-maintenance" name="notify_maintenance" checked>
+            <label for="notify-maintenance" class="check-label">
+              <strong>Scheduled Maintenance Windows</strong> (48-hour advance notice before planned infrastructure indexing)
+            </label>
+          </div>
+        </section>
+      </fieldset>
+
+      <!-- Section 4: Security Settings & Password Change -->
+      <fieldset class="form-fieldset" id="security">
+        <legend class="form-legend">Authentication &amp; Security Controls</legend>
+
+        <section class="form-grid">
+          <div class="form-group">
+            <label for="sec-current-pwd" class="form-label">Current Master Password</label>
+            <input
+              type="password"
+              id="sec-current-pwd"
+              name="current_pwd"
+              class="form-control"
+              autocomplete="current-password"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="sec-new-pwd" class="form-label">New Password</label>
+            <input
+              type="password"
+              id="sec-new-pwd"
+              name="new_pwd"
+              class="form-control"
+              minlength="8"
+              autocomplete="new-password"
+            >
+            <p class="form-hint">Minimum 8 characters with alphanumeric composition</p>
+          </div>
+
+          <div class="form-group">
+            <label for="sec-session-timeout" class="form-label">Session Idle Timeout</label>
+            <select id="sec-session-timeout" name="session_timeout" class="form-control">
+              <option value="15">15 Minutes (Strict Security)</option>
+              <option value="30" selected>30 Minutes (Recommended)</option>
+              <option value="60">60 Minutes</option>
+              <option value="120">2 Hours</option>
+            </select>
+          </div>
+        </section>
+      </fieldset>
+
+      <section class="form-actions-end">
+        <button type="reset" class="btn btn-secondary">Reset Changes</button>
+        <button type="submit" class="btn btn-primary">Save All Preferences</button>
+      </section>
+    </form>
+
+    <!-- Help & Support Section -->
+    <section class="dashboard-panel mt-xl" id="help-support" aria-labelledby="support-heading">
+      <header class="panel-header">
+        <h2 id="support-heading">Accessibility Compliance Statement &amp; Support</h2>
+      </header>
+      <p>
+        <strong>EnterpriseCore</strong> is fully designed, audited, and tested against <strong>World Wide Web Consortium (W3C) Web Content Accessibility Guidelines (WCAG) 2.1 Level AA &amp; AAA</strong>.
+      </p>
+      <article>
+        <h3>Assistive Technology Verification:</h3>
+        <ul class="help-list">
+          <li>Screen readers: NVDA, JAWS, and Apple VoiceOver fully supported.</li>
+          <li>Keyboard only: 100% operable without mouse interaction; zero keyboard traps.</li>
+          <li>High contrast ratio: Minimum 7:1 for body copy and 4.5:1 for interactive states.</li>
+          <li>Semantic landmarks: Standardized landmark regions allow rapid landmark navigation.</li>
+        </ul>
+        <p>If you experience any accessibility barrier or have inquiries, please contact our 24/7 accessibility team at <a href="mailto:accessibility@enterprise.corp" class="support-email">accessibility@enterprise.corp</a>.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Accessible Footer Landmark -->
+  <footer class="app-footer">
+    <p>&copy; 2026 EnterpriseCore Systems Inc. All rights reserved.</p>
+    <nav aria-label="Footer legal and accessibility links">
+      <ul class="footer-nav-list">
+        <li><a href="#accessibility" class="footer-link">Accessibility Statement</a></li>
+        <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Live Announcer Region for Screen Readers -->
+  <p id="live-announcer" aria-live="polite" class="sr-only"></p>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

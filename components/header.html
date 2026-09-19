@@ -1,0 +1,44 @@
+<!-- Component: Accessible Header -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="app-header" aria-label="EnterpriseCore site header">
+  <section class="header-brand-group" aria-label="Platform logo and mobile menu">
+    <button type="button" class="mobile-nav-toggle" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span aria-hidden="true">&#9776;</span>
+    </button>
+    <a href="index.html" class="brand-link" aria-label="Accessible Enterprise Dashboard Home">
+      <img src="assets/images/logo.svg" alt="" width="36" height="36" aria-hidden="true">
+      <span class="brand-title">EnterpriseCore</span>
+    </a>
+  </section>
+
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <ul class="primary-nav-list">
+      <li>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </li>
+      <li>
+        <a href="reports.html" class="nav-link">Reports</a>
+      </li>
+      <li>
+        <a href="users.html" class="nav-link">Users</a>
+      </li>
+      <li>
+        <a href="settings.html" class="nav-link">Settings</a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="header-actions" aria-label="User actions">
+    <button type="button" class="header-action-btn" aria-label="Notifications: 3 unread updates">
+      <span aria-hidden="true">&#128276;</span>
+      <span class="notification-badge" aria-hidden="true">3</span>
+      <span class="sr-only">3 unread notifications</span>
+    </button>
+
+    <a href="settings.html" class="user-profile-badge" aria-label="User Profile: Alex Morgan, Administrator">
+      <span class="avatar-circle" aria-hidden="true">AM</span>
+      <span class="profile-name">Alex Morgan</span>
+    </a>
+  </section>
+</header>

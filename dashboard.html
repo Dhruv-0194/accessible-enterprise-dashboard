@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible Enterprise Dashboard - Real-time metrics, telemetry, activity feeds, and employee operations.">
+  <title>Dashboard | Accessible Enterprise Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Accessible Header Landmark -->
+  <header class="app-header" aria-label="EnterpriseCore site header">
+    <section class="header-brand-group" aria-label="Brand identifier and navigation control">
+      <button type="button" class="mobile-nav-toggle" aria-controls="sidebar-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <a href="index.html" class="brand-link" aria-label="Accessible Enterprise Dashboard Home">
+        <img src="assets/images/logo.svg" alt="" width="36" height="36" aria-hidden="true">
+        <span class="brand-title">EnterpriseCore</span>
+      </a>
+    </section>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <ul class="primary-nav-list">
+        <li>
+          <a href="index.html" class="nav-link">Overview</a>
+        </li>
+        <li>
+          <a href="dashboard.html" class="nav-link" aria-current="page">Dashboard</a>
+        </li>
+        <li>
+          <a href="reports.html" class="nav-link">Reports</a>
+        </li>
+        <li>
+          <a href="users.html" class="nav-link">Users</a>
+        </li>
+        <li>
+          <a href="settings.html" class="nav-link">Settings</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="header-actions" aria-label="User notifications and profile">
+      <button type="button" class="header-action-btn" aria-label="Notifications: 3 unread updates">
+        <span aria-hidden="true">&#128276;</span>
+        <span class="notification-badge" aria-hidden="true">3</span>
+        <span class="sr-only">3 unread notifications</span>
+      </button>
+
+      <a href="settings.html" class="user-profile-badge" aria-label="User Profile: Alex Morgan, Administrator">
+        <span class="avatar-circle" aria-hidden="true">AM</span>
+        <span class="profile-name">Alex Morgan</span>
+      </a>
+    </section>
+  </header>
+
+  <!-- Accessible Sidebar Navigation -->
+  <aside class="app-sidebar" aria-label="Sidebar navigation">
+    <nav class="sidebar-nav" id="sidebar-nav" aria-label="Sidebar navigation">
+      <section class="sidebar-nav-section" aria-labelledby="sidebar-main-title">
+        <h2 id="sidebar-main-title" class="sidebar-heading">Main Navigation</h2>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="index.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard.html" class="sidebar-link" aria-current="page">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="reports.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+              </svg>
+              <span>Analytics &amp; Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <span>Users</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="sidebar-nav-section" aria-labelledby="sidebar-config-title">
+        <h2 id="sidebar-config-title" class="sidebar-heading">System &amp; Help</h2>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="settings.html" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html#help-support" class="sidebar-link">
+              <svg class="sidebar-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/>
+              </svg>
+              <span>Help &amp; Support</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="sidebar-footer-note">
+        <p><strong>System Status:</strong> <span class="badge badge-active badge-live">Operational</span></p>
+        <p class="mb-0 fs-xs">WCAG 2.1 AA Certified</p>
+      </footer>
+    </nav>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="app-main">
+    <!-- Page Header with Title and Quick Action Trigger -->
+    <header class="page-header-section" aria-label="Dashboard heading and actions">
+      <section class="header-text-block">
+        <h1 id="page-title">Operations Dashboard</h1>
+        <p>Real-time enterprise metrics, critical security alerts, and workforce activity logs.</p>
+      </section>
+
+      <section class="page-actions-group" aria-label="Dashboard quick actions">
+        <button type="button" class="btn btn-primary" data-open-modal="user-modal" data-modal-mode="add">
+          <span aria-hidden="true">&#43;</span>
+          <span>Add New User</span>
+        </button>
+        <a href="reports.html" class="btn btn-secondary">
+          <span aria-hidden="true">&#128196;</span>
+          <span>View Reports</span>
+        </a>
+      </section>
+    </header>
+
+    <!-- Summary Cards & Statistics -->
+    <section aria-labelledby="summary-stats-heading">
+      <h2 id="summary-stats-heading" class="sr-only">Operations Summary Statistics</h2>
+      <section class="stats-grid">
+        <article class="stat-card" aria-labelledby="stat-active-users">
+          <header class="stat-header">
+            <h3 id="stat-active-users" class="stat-label">Active Users Online</h3>
+            <span class="stat-icon" aria-hidden="true">&#128101;</span>
+          </header>
+          <data class="stat-value" value="2845">2,845</data>
+          <p class="stat-trend trend-up">
+            <span aria-hidden="true">&#9650;</span>
+            <span>+12.4% from yesterday</span>
+          </p>
+        </article>
+
+        <article class="stat-card" aria-labelledby="stat-server-load">
+          <header class="stat-header">
+            <h3 id="stat-server-load" class="stat-label">Average Server Load</h3>
+            <span class="stat-icon" aria-hidden="true">&#9881;</span>
+          </header>
+          <data class="stat-value" value="41.8">41.8%</data>
+          <p class="stat-trend trend-neutral">
+            <span aria-hidden="true">&#9644;</span>
+            <span>Stable operating capacity</span>
+          </p>
+        </article>
+
+        <article class="stat-card" aria-labelledby="stat-security-incidents">
+          <header class="stat-header">
+            <h3 id="stat-security-incidents" class="stat-label">Security Incidents</h3>
+            <span class="stat-icon" aria-hidden="true">&#128737;</span>
+          </header>
+          <data class="stat-value" value="0">0</data>
+          <p class="stat-trend trend-up">
+            <span aria-hidden="true">&#10003;</span>
+            <span>All systems nominal</span>
+          </p>
+        </article>
+
+        <article class="stat-card" aria-labelledby="stat-throughput">
+          <header class="stat-header">
+            <h3 id="stat-throughput" class="stat-label">API Requests / Sec</h3>
+            <span class="stat-icon" aria-hidden="true">&#128640;</span>
+          </header>
+          <data class="stat-value" value="18450">18,450</data>
+          <p class="stat-trend trend-up">
+            <span aria-hidden="true">&#9650;</span>
+            <span>+8.1% peak workload</span>
+          </p>
+        </article>
+      </section>
+    </section>
+
+    <!-- Two-column Section: Recent Activity & Quick Actions / Notifications -->
+    <section class="dashboard-content-layout" aria-label="Activity Feed and Operations Panel">
+      <!-- Recent Activity Feed (Semantic <ol> and <article> with <time>) -->
+      <section class="dashboard-panel" aria-labelledby="activity-heading">
+        <header class="panel-header">
+          <h2 id="activity-heading">Recent System Activity</h2>
+          <span class="badge badge-active">Live Feed</span>
+        </header>
+
+        <ol class="activity-timeline">
+          <li>
+            <article class="timeline-item" aria-labelledby="act-1-title">
+              <span class="timeline-marker" aria-hidden="true"></span>
+              <section class="timeline-content">
+                <h3 id="act-1-title">Security policy upgrade completed</h3>
+                <p>MFA enforcement protocol was updated across all Engineering accounts.</p>
+                <time datetime="2026-09-17T21:45:00" class="timeline-meta">15 minutes ago &bull; Security Bot</time>
+              </section>
+            </article>
+          </li>
+
+          <li>
+            <article class="timeline-item" aria-labelledby="act-2-title">
+              <span class="timeline-marker" aria-hidden="true"></span>
+              <section class="timeline-content">
+                <h3 id="act-2-title">User role elevated for Elena Rostova</h3>
+                <p>Promotion to Senior Product Designer applied with updated branch access.</p>
+                <time datetime="2026-09-17T20:15:00" class="timeline-meta">1 hour ago &bull; Human Resources</time>
+              </section>
+            </article>
+          </li>
+
+          <li>
+            <article class="timeline-item" aria-labelledby="act-3-title">
+              <span class="timeline-marker" aria-hidden="true"></span>
+              <section class="timeline-content">
+                <h3 id="act-3-title">Quarterly compliance audit archive generated</h3>
+                <p>Cryptographic hash verification confirmed for 2026-Q3 reporting export.</p>
+                <time datetime="2026-09-17T18:30:00" class="timeline-meta">3 hours ago &bull; Audit Service</time>
+              </section>
+            </article>
+          </li>
+
+          <li>
+            <article class="timeline-item" aria-labelledby="act-4-title">
+              <span class="timeline-marker" aria-hidden="true"></span>
+              <section class="timeline-content">
+                <h3 id="act-4-title">New employee onboarded: David Chen</h3>
+                <p>Initial provisioning completed in Human Resources department.</p>
+                <time datetime="2026-09-17T16:00:00" class="timeline-meta">5 hours ago &bull; HR Admin</time>
+              </section>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Side Column: Notifications & Quick Actions -->
+      <section aria-label="System Notices and Quick Actions">
+        <!-- Notifications Card -->
+        <section class="dashboard-panel" aria-labelledby="notices-heading">
+          <header class="panel-header">
+            <h2 id="notices-heading">Priority Notices</h2>
+            <span class="badge badge-pending">2 Pending</span>
+          </header>
+          <ul class="activity-timeline list-unstyled">
+            <li>
+              <article class="timeline-item">
+                <span class="timeline-marker timeline-marker-warning" aria-hidden="true"></span>
+                <section class="timeline-content">
+                  <h3>Scheduled Maintenance Window</h3>
+                  <p>Database indexing scheduled for Sunday 02:00 UTC. Zero downtime anticipated.</p>
+                  <time datetime="2026-09-20T02:00:00" class="timeline-meta">Scheduled for Sep 20, 2026</time>
+                </section>
+              </article>
+            </li>
+            <li>
+              <article class="timeline-item">
+                <span class="timeline-marker timeline-marker-info" aria-hidden="true"></span>
+                <section class="timeline-content">
+                  <h3>Accessibility Compliance Review</h3>
+                  <p>Annual WCAG 2.1 AAA accessibility recertification audit underway.</p>
+                  <time datetime="2026-09-17" class="timeline-meta">In Progress</time>
+                </section>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Quick Actions Panel -->
+        <section class="dashboard-panel" aria-labelledby="quick-actions-heading">
+          <header class="panel-header">
+            <h2 id="quick-actions-heading">Quick Actions</h2>
+          </header>
+          <menu class="quick-actions-menu">
+            <li>
+              <button
+                type="button"
+                class="btn btn-primary menu-btn-full"
+                data-open-modal="user-modal"
+                data-modal-mode="add"
+              >
+                <span aria-hidden="true">&#43;</span>
+                <span>Onboard New User</span>
+              </button>
+            </li>
+            <li>
+              <a
+                href="reports.html"
+                class="btn btn-secondary menu-btn-full"
+              >
+                <span aria-hidden="true">&#128202;</span>
+                <span>Export System Audit</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="settings.html"
+                class="btn btn-secondary menu-btn-full"
+              >
+                <span aria-hidden="true">&#9881;</span>
+                <span>System Configuration</span>
+              </a>
+            </li>
+          </menu>
+        </section>
+      </section>
+    </section>
+
+    <!-- Accessible Employee Directory Table Section -->
+    <section class="dashboard-panel" aria-labelledby="directory-table-heading">
+      <header class="panel-header">
+        <h2 id="directory-table-heading">Active Workforce Directory</h2>
+        <a href="users.html" class="btn btn-secondary btn-sm">View Full Directory</a>
+      </header>
+
+      <!-- Accessible Table Toolbar -->
+      <section class="table-toolbar" aria-label="Table filters and search">
+        <form class="table-search-form" role="search">
+          <section class="search-input-group">
+            <label for="table-search-input" class="sr-only">Search Workforce Directory</label>
+            <input
+              type="search"
+              id="table-search-input"
+              class="form-control"
+              placeholder="Search by name, email, or role..."
+              aria-label="Search employees by name, email, or role"
+            >
+            <button type="submit" class="btn btn-secondary btn-sm" aria-label="Submit employee search">Search</button>
+          </section>
+        </form>
+
+        <section class="form-group-horizontal">
+          <label for="table-dept-filter" class="fw-600 fs-sm">Department:</label>
+          <select id="table-dept-filter" class="form-control select-auto" aria-label="Filter by department">
+            <option value="all">All Departments</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Product">Product</option>
+            <option value="Finance">Finance</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Human Resources">Human Resources</option>
+          </select>
+        </section>
+      </section>
+
+      <!-- Responsive Accessible Table with keyboard scrollability -->
+      <section class="table-responsive-container" tabindex="0" aria-label="Workforce Directory Table, use arrow keys to scroll horizontally">
+        <table class="data-table">
+          <caption>Active Employee Directory &amp; Security Roles</caption>
+          <thead>
+            <tr>
+              <th scope="col" data-sortable aria-sort="none">User ID</th>
+              <th scope="col" data-sortable aria-sort="ascending">Name</th>
+              <th scope="col" data-sortable aria-sort="none">Email</th>
+              <th scope="col" data-sortable aria-sort="none">Department</th>
+              <th scope="col" data-sortable aria-sort="none">Role</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-dept="Engineering">
+              <td>USR-1001</td>
+              <th scope="row">Alex Morgan</th>
+              <td>alex.morgan@enterprise.corp</td>
+              <td>Engineering</td>
+              <td>Lead Architect</td>
+              <td>
+                <span class="badge badge-active">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Active</span>
+                </span>
+              </td>
+              <td>
+                <nav class="table-actions-cell" aria-label="Actions for Alex Morgan">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-open-modal="user-modal"
+                    data-modal-mode="edit"
+                    data-user-name="Alex Morgan"
+                    data-user-email="alex.morgan@enterprise.corp"
+                    data-user-dept="Engineering"
+                    data-user-role="Administrator"
+                    aria-label="Edit user Alex Morgan"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-action="delete-user"
+                    data-user-name="Alex Morgan"
+                    aria-label="Delete user Alex Morgan"
+                  >
+                    Delete
+                  </button>
+                </nav>
+              </td>
+            </tr>
+
+            <tr data-dept="Product">
+              <td>USR-1002</td>
+              <th scope="row">Elena Rostova</th>
+              <td>elena.rostova@enterprise.corp</td>
+              <td>Product</td>
+              <td>Senior Product Designer</td>
+              <td>
+                <span class="badge badge-active">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Active</span>
+                </span>
+              </td>
+              <td>
+                <nav class="table-actions-cell" aria-label="Actions for Elena Rostova">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-open-modal="user-modal"
+                    data-modal-mode="edit"
+                    data-user-name="Elena Rostova"
+                    data-user-email="elena.rostova@enterprise.corp"
+                    data-user-dept="Product"
+                    data-user-role="Staff"
+                    aria-label="Edit user Elena Rostova"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-action="delete-user"
+                    data-user-name="Elena Rostova"
+                    aria-label="Delete user Elena Rostova"
+                  >
+                    Delete
+                  </button>
+                </nav>
+              </td>
+            </tr>
+
+            <tr data-dept="Finance">
+              <td>USR-1003</td>
+              <th scope="row">Marcus Vance</th>
+              <td>marcus.vance@enterprise.corp</td>
+              <td>Finance</td>
+              <td>Financial Controller</td>
+              <td>
+                <span class="badge badge-pending">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Pending</span>
+                </span>
+              </td>
+              <td>
+                <nav class="table-actions-cell" aria-label="Actions for Marcus Vance">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-open-modal="user-modal"
+                    data-modal-mode="edit"
+                    data-user-name="Marcus Vance"
+                    data-user-email="marcus.vance@enterprise.corp"
+                    data-user-dept="Finance"
+                    data-user-role="Manager"
+                    aria-label="Edit user Marcus Vance"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-action="delete-user"
+                    data-user-name="Marcus Vance"
+                    aria-label="Delete user Marcus Vance"
+                  >
+                    Delete
+                  </button>
+                </nav>
+              </td>
+            </tr>
+
+            <tr data-dept="Marketing">
+              <td>USR-1004</td>
+              <th scope="row">Sarah Connor</th>
+              <td>sarah.connor@enterprise.corp</td>
+              <td>Marketing</td>
+              <td>Growth Marketing Specialist</td>
+              <td>
+                <span class="badge badge-active">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Active</span>
+                </span>
+              </td>
+              <td>
+                <nav class="table-actions-cell" aria-label="Actions for Sarah Connor">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-open-modal="user-modal"
+                    data-modal-mode="edit"
+                    data-user-name="Sarah Connor"
+                    data-user-email="sarah.connor@enterprise.corp"
+                    data-user-dept="Marketing"
+                    data-user-role="Staff"
+                    aria-label="Edit user Sarah Connor"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-action="delete-user"
+                    data-user-name="Sarah Connor"
+                    aria-label="Delete user Sarah Connor"
+                  >
+                    Delete
+                  </button>
+                </nav>
+              </td>
+            </tr>
+
+            <tr data-dept="Human Resources">
+              <td>USR-1005</td>
+              <th scope="row">David Chen</th>
+              <td>david.chen@enterprise.corp</td>
+              <td>Human Resources</td>
+              <td>HR Operations Partner</td>
+              <td>
+                <span class="badge badge-inactive">
+                  <span aria-hidden="true">&#9679;</span>
+                  <span>Inactive</span>
+                </span>
+              </td>
+              <td>
+                <nav class="table-actions-cell" aria-label="Actions for David Chen">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-open-modal="user-modal"
+                    data-modal-mode="edit"
+                    data-user-name="David Chen"
+                    data-user-email="david.chen@enterprise.corp"
+                    data-user-dept="Human Resources"
+                    data-user-role="Staff"
+                    aria-label="Edit user David Chen"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-action="delete-user"
+                    data-user-name="David Chen"
+                    aria-label="Delete user David Chen"
+                  >
+                    Delete
+                  </button>
+                </nav>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <!-- Accessible Footer Landmark -->
+  <footer class="app-footer">
+    <p>&copy; 2026 EnterpriseCore Systems Inc. All rights reserved.</p>
+    <nav aria-label="Footer legal and accessibility links">
+      <ul class="footer-nav-list">
+        <li><a href="settings.html#accessibility" class="footer-link">Accessibility Statement</a></li>
+        <li><a href="settings.html#privacy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="settings.html#terms" class="footer-link">Terms of Service</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Modal Dialog (<dialog>) for Add/Edit User -->
+  <dialog id="user-modal" class="app-modal" aria-labelledby="modal-title" aria-modal="true">
+    <header class="modal-header" aria-label="Dialog header">
+      <h2 id="modal-title">Add New User</h2>
+      <button type="button" class="btn btn-secondary btn-sm" data-close-modal aria-label="Close dialog">
+        <span aria-hidden="true">&times;</span>
+        <span>Close</span>
+      </button>
+    </header>
+
+    <section class="modal-body">
+      <form id="user-form" class="accessible-form" novalidate>
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Personal Information</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="user-fullname" class="form-label">
+                Full Name <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="user-fullname"
+                name="fullname"
+                class="form-control"
+                required
+                minlength="2"
+                autocomplete="name"
+                aria-required="true"
+                aria-describedby="user-fullname-error user-fullname-hint"
+              >
+              <p id="user-fullname-hint" class="form-hint">Enter first and last name</p>
+              <p id="user-fullname-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="user-email" class="form-label">
+                Email Address <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="user-email"
+                name="email"
+                class="form-control"
+                required
+                autocomplete="email"
+                aria-required="true"
+                aria-describedby="user-email-error user-email-hint"
+              >
+              <p id="user-email-hint" class="form-hint">Corporate email (e.g. name@company.com)</p>
+              <p id="user-email-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="user-phone" class="form-label">
+                Phone Number <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="tel"
+                id="user-phone"
+                name="phone"
+                class="form-control"
+                required
+                pattern="[0-9+\-\s()]{7,20}"
+                autocomplete="tel"
+                aria-required="true"
+                aria-describedby="user-phone-error user-phone-hint"
+              >
+              <p id="user-phone-hint" class="form-hint">Format: +1 555-0199 or 555-0199</p>
+              <p id="user-phone-error" class="form-error" role="alert"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Organizational Assignment</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="user-department" class="form-label">
+                Department <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="user-department"
+                name="department"
+                class="form-control"
+                required
+                aria-required="true"
+                aria-describedby="user-department-error"
+              >
+                <option value="">-- Select Department --</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Product">Product &amp; Design</option>
+                <option value="Marketing">Marketing &amp; Sales</option>
+                <option value="Finance">Finance &amp; Operations</option>
+                <option value="Human Resources">Human Resources</option>
+              </select>
+              <p id="user-department-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="user-role" class="form-label">
+                Role &amp; Permissions <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="user-role"
+                name="role"
+                class="form-control"
+                required
+                aria-required="true"
+                aria-describedby="user-role-error"
+              >
+                <option value="">-- Select Role --</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Manager">Department Manager</option>
+                <option value="Staff">Staff Member</option>
+                <option value="Auditor">Security Auditor</option>
+              </select>
+              <p id="user-role-error" class="form-error" role="alert"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Security Credentials</legend>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="user-password" class="form-label">
+                Account Password <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <div class="password-input-wrapper">
+                <input
+                  type="password"
+                  id="user-password"
+                  name="password"
+                  class="form-control"
+                  required
+                  minlength="8"
+                  autocomplete="new-password"
+                  aria-required="true"
+                  aria-describedby="user-password-error user-password-hint"
+                >
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-sm"
+                  data-toggle-password="user-password"
+                  aria-label="Show Account Password"
+                  aria-pressed="false"
+                >
+                  Show
+                </button>
+              </div>
+              <p id="user-password-hint" class="form-hint">At least 8 characters with letters &amp; numbers</p>
+              <p id="user-password-error" class="form-error" role="alert"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="user-confirm-password" class="form-label">
+                Confirm Password <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="password"
+                id="user-confirm-password"
+                name="confirm_password"
+                class="form-control"
+                required
+                minlength="8"
+                autocomplete="new-password"
+                aria-required="true"
+                aria-describedby="user-confirm-password-error"
+              >
+              <p id="user-confirm-password-error" class="form-error" role="alert"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Account Status &amp; Compliance</legend>
+          <div class="radio-group-vertical" role="radiogroup" aria-labelledby="status-radio-legend">
+            <p id="status-radio-legend" class="fw-600 mb-0">Initial Status</p>
+            <div class="check-item">
+              <input type="radio" id="status-active" name="account_status" value="Active" checked>
+              <label for="status-active" class="check-label">Active (User can authenticate immediately)</label>
+            </div>
+            <div class="check-item">
+              <input type="radio" id="status-pending" name="account_status" value="Pending">
+              <label for="status-pending" class="check-label">Pending (Verification required before access)</label>
+            </div>
+          </div>
+
+          <div class="checkbox-group mt-lg">
+            <div class="check-item">
+              <input
+                type="checkbox"
+                id="user-terms"
+                name="terms"
+                required
+                aria-required="true"
+                aria-describedby="user-terms-error"
+              >
+              <label for="user-terms" class="check-label">
+                I confirm this user agrees to enterprise security compliance policies and terms. <span class="required-indicator" aria-hidden="true">*</span>
+              </label>
+            </div>
+            <p id="user-terms-error" class="form-error" role="alert"></p>
+          </div>
+        </fieldset>
+
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save User Record</button>
+        </footer>
+      </form>
+    </section>
+  </dialog>
+
+  <!-- Live Announcer Region for Screen Readers -->
+  <p id="live-announcer" aria-live="polite" class="sr-only"></p>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

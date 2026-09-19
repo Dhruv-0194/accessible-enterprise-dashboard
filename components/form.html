@@ -1,0 +1,217 @@
+<!-- Component: Accessible User Management Form -->
+<form id="standalone-user-form" class="accessible-form" novalidate aria-labelledby="form-heading">
+  <header>
+    <h2 id="form-heading">Employee Profile &amp; Access Configuration</h2>
+    <p>Fields marked with an asterisk (<span class="required-indicator" aria-hidden="true">*</span>) are required.</p>
+  </header>
+
+  <!-- Group 1: Personal Details -->
+  <fieldset class="form-fieldset">
+    <legend class="form-legend">Personal Details</legend>
+
+    <section class="form-grid">
+      <div class="form-group">
+        <label for="form-fullname" class="form-label">
+          Full Legal Name <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <input
+          type="text"
+          id="form-fullname"
+          name="fullname"
+          class="form-control"
+          required
+          minlength="2"
+          maxlength="80"
+          autocomplete="name"
+          aria-required="true"
+          aria-describedby="form-fullname-error form-fullname-hint"
+        >
+        <p id="form-fullname-hint" class="form-hint">First and last name as listed on government ID</p>
+        <p id="form-fullname-error" class="form-error" role="alert"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="form-email" class="form-label">
+          Work Email Address <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <input
+          type="email"
+          id="form-email"
+          name="email"
+          class="form-control"
+          required
+          autocomplete="email"
+          aria-required="true"
+          aria-describedby="form-email-error form-email-hint"
+        >
+        <p id="form-email-hint" class="form-hint">Official corporate email ending in @enterprise.corp</p>
+        <p id="form-email-error" class="form-error" role="alert"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="form-phone" class="form-label">
+          Contact Phone Number <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <input
+          type="tel"
+          id="form-phone"
+          name="phone"
+          class="form-control"
+          required
+          pattern="[0-9+\-\s()]{7,20}"
+          autocomplete="tel"
+          aria-required="true"
+          aria-describedby="form-phone-error form-phone-hint"
+        >
+        <p id="form-phone-hint" class="form-hint">Include country and area codes (e.g. +1 555-0199)</p>
+        <p id="form-phone-error" class="form-error" role="alert"></p>
+      </div>
+    </section>
+  </fieldset>
+
+  <!-- Group 2: Department & Role Assignment -->
+  <fieldset class="form-fieldset">
+    <legend class="form-legend">Enterprise Placement</legend>
+
+    <section class="form-grid">
+      <div class="form-group">
+        <label for="form-department" class="form-label">
+          Department <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <select
+          id="form-department"
+          name="department"
+          class="form-control"
+          required
+          aria-required="true"
+          aria-describedby="form-department-error"
+        >
+          <option value="">-- Choose Assigned Department --</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Product">Product &amp; Design</option>
+          <option value="Marketing">Marketing &amp; Sales</option>
+          <option value="Finance">Finance &amp; Operations</option>
+          <option value="Human Resources">Human Resources</option>
+        </select>
+        <p id="form-department-error" class="form-error" role="alert"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="form-role" class="form-label">
+          Assigned Access Role <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <select
+          id="form-role"
+          name="role"
+          class="form-control"
+          required
+          aria-required="true"
+          aria-describedby="form-role-error"
+        >
+          <option value="">-- Choose Role Level --</option>
+          <option value="Administrator">Administrator (Full Access)</option>
+          <option value="Manager">Department Manager</option>
+          <option value="Staff">Staff Member (Standard Read/Write)</option>
+          <option value="Auditor">Compliance Auditor (Read-Only)</option>
+        </select>
+        <p id="form-role-error" class="form-error" role="alert"></p>
+      </div>
+    </section>
+  </fieldset>
+
+  <!-- Group 3: Authentication Security -->
+  <fieldset class="form-fieldset">
+    <legend class="form-legend">Security Credentials</legend>
+
+    <section class="form-grid">
+      <div class="form-group">
+        <label for="form-password" class="form-label">
+          Password <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <div class="password-input-wrapper">
+          <input
+            type="password"
+            id="form-password"
+            name="password"
+            class="form-control"
+            required
+            minlength="8"
+            maxlength="128"
+            autocomplete="new-password"
+            aria-required="true"
+            aria-describedby="form-password-error form-password-hint"
+          >
+          <button
+            type="button"
+            class="btn btn-secondary btn-sm"
+            data-toggle-password="form-password"
+            aria-label="Show Password"
+            aria-pressed="false"
+          >
+            Show
+          </button>
+        </div>
+        <p id="form-password-hint" class="form-hint">Minimum 8 characters with alphanumeric composition</p>
+        <p id="form-password-error" class="form-error" role="alert"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="form-confirm-password" class="form-label">
+          Confirm Password <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+        <input
+          type="password"
+          id="form-confirm-password"
+          name="confirm_password"
+          class="form-control"
+          required
+          minlength="8"
+          maxlength="128"
+          autocomplete="new-password"
+          aria-required="true"
+          aria-describedby="form-confirm-password-error"
+        >
+        <p id="form-confirm-password-error" class="form-error" role="alert"></p>
+      </div>
+    </section>
+  </fieldset>
+
+  <!-- Group 4: Account Status & Compliance -->
+  <fieldset class="form-fieldset">
+    <legend class="form-legend">Compliance &amp; Initial Account Status</legend>
+
+    <section class="radio-group-vertical" role="radiogroup" aria-labelledby="form-status-label">
+      <p id="form-status-label" class="fw-600 mb-0">Account Provisioning State</p>
+      <div class="check-item">
+        <input type="radio" id="form-status-active" name="account_status" value="Active" checked>
+        <label for="form-status-active" class="check-label">Active (Permits instant SSO access upon creation)</label>
+      </div>
+      <div class="check-item">
+        <input type="radio" id="form-status-pending" name="account_status" value="Pending">
+        <label for="form-status-pending" class="check-label">Pending (Requires manager approval key before activation)</label>
+      </div>
+    </section>
+
+    <section class="checkbox-group mt-lg">
+      <div class="check-item">
+        <input
+          type="checkbox"
+          id="form-terms"
+          name="terms"
+          required
+          aria-required="true"
+          aria-describedby="form-terms-error"
+        >
+        <label for="form-terms" class="check-label">
+          I attest that this user has undergone verified background clearance and accepts the enterprise acceptable use policy. <span class="required-indicator" aria-hidden="true">*</span>
+        </label>
+      </div>
+      <p id="form-terms-error" class="form-error" role="alert"></p>
+    </section>
+  </fieldset>
+
+  <footer class="form-actions-end">
+    <button type="reset" class="btn btn-secondary">Reset Fields</button>
+    <button type="submit" class="btn btn-primary">Submit User Profile</button>
+  </footer>
+</form>

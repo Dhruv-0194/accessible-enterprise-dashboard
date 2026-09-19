@@ -1,0 +1,218 @@
+<!-- Component: Accessible Modal Dialog (<dialog>) -->
+<dialog id="user-modal" class="app-modal" aria-labelledby="modal-title" aria-modal="true">
+  <header class="modal-header" aria-label="Dialog header">
+    <h2 id="modal-title">Add New User</h2>
+    <button type="button" class="btn btn-secondary btn-sm" data-close-modal aria-label="Close dialog">
+      <span aria-hidden="true">&times;</span>
+      <span>Close</span>
+    </button>
+  </header>
+
+  <section class="modal-body">
+    <form id="user-form" class="accessible-form" novalidate>
+      <!-- Personal Details -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">Personal Information</legend>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="user-fullname" class="form-label">
+              Full Name <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="user-fullname"
+              name="fullname"
+              class="form-control"
+              required
+              minlength="2"
+              autocomplete="name"
+              aria-required="true"
+              aria-describedby="user-fullname-error user-fullname-hint"
+            >
+            <p id="user-fullname-hint" class="form-hint">Enter first and last name</p>
+            <p id="user-fullname-error" class="form-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="user-email" class="form-label">
+              Email Address <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="user-email"
+              name="email"
+              class="form-control"
+              required
+              autocomplete="email"
+              aria-required="true"
+              aria-describedby="user-email-error user-email-hint"
+            >
+            <p id="user-email-hint" class="form-hint">Corporate email (e.g. name@company.com)</p>
+            <p id="user-email-error" class="form-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="user-phone" class="form-label">
+              Phone Number <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="tel"
+              id="user-phone"
+              name="phone"
+              class="form-control"
+              required
+              pattern="[0-9+\-\s()]{7,20}"
+              autocomplete="tel"
+              aria-required="true"
+              aria-describedby="user-phone-error user-phone-hint"
+            >
+            <p id="user-phone-hint" class="form-hint">Format: +1 555-0199 or 555-0199</p>
+            <p id="user-phone-error" class="form-error" role="alert"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Department & Role Assignment -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">Organizational Assignment</legend>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="user-department" class="form-label">
+              Department <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <select
+              id="user-department"
+              name="department"
+              class="form-control"
+              required
+              aria-required="true"
+              aria-describedby="user-department-error"
+            >
+              <option value="">-- Select Department --</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Product">Product &amp; Design</option>
+              <option value="Marketing">Marketing &amp; Sales</option>
+              <option value="Finance">Finance &amp; Operations</option>
+              <option value="Human Resources">Human Resources</option>
+            </select>
+            <p id="user-department-error" class="form-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="user-role" class="form-label">
+              Role &amp; Permissions <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <select
+              id="user-role"
+              name="role"
+              class="form-control"
+              required
+              aria-required="true"
+              aria-describedby="user-role-error"
+            >
+              <option value="">-- Select Role --</option>
+              <option value="Administrator">Administrator</option>
+              <option value="Manager">Department Manager</option>
+              <option value="Staff">Staff Member</option>
+              <option value="Auditor">Security Auditor</option>
+            </select>
+            <p id="user-role-error" class="form-error" role="alert"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Security Credentials -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">Security Credentials</legend>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="user-password" class="form-label">
+              Account Password <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <div class="password-input-wrapper">
+              <input
+                type="password"
+                id="user-password"
+                name="password"
+                class="form-control"
+                required
+                minlength="8"
+                autocomplete="new-password"
+                aria-required="true"
+                aria-describedby="user-password-error user-password-hint"
+              >
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                data-toggle-password="user-password"
+                aria-label="Show Account Password"
+                aria-pressed="false"
+              >
+                Show
+              </button>
+            </div>
+            <p id="user-password-hint" class="form-hint">At least 8 characters with letters &amp; numbers</p>
+            <p id="user-password-error" class="form-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="user-confirm-password" class="form-label">
+              Confirm Password <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="password"
+              id="user-confirm-password"
+              name="confirm_password"
+              class="form-control"
+              required
+              minlength="8"
+              autocomplete="new-password"
+              aria-required="true"
+              aria-describedby="user-confirm-password-error"
+            >
+            <p id="user-confirm-password-error" class="form-error" role="alert"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Account Status & Terms -->
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">Account Status &amp; Compliance</legend>
+        <div class="radio-group-vertical" role="radiogroup" aria-labelledby="modal-status-legend">
+          <p id="modal-status-legend" class="fw-600 mb-0">Initial Status</p>
+          <div class="check-item">
+            <input type="radio" id="status-active" name="account_status" value="Active" checked>
+            <label for="status-active" class="check-label">Active (User can authenticate immediately)</label>
+          </div>
+          <div class="check-item">
+            <input type="radio" id="status-pending" name="account_status" value="Pending">
+            <label for="status-pending" class="check-label">Pending (Verification required before access)</label>
+          </div>
+        </div>
+
+        <div class="checkbox-group mt-lg">
+          <div class="check-item">
+            <input
+              type="checkbox"
+              id="user-terms"
+              name="terms"
+              required
+              aria-required="true"
+              aria-describedby="user-terms-error"
+            >
+            <label for="user-terms" class="check-label">
+              I confirm this user agrees to enterprise security compliance policies and terms. <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+          </div>
+          <p id="user-terms-error" class="form-error" role="alert"></p>
+        </div>
+      </fieldset>
+
+      <!-- Modal Actions -->
+      <footer class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
+        <button type="submit" class="btn btn-primary" id="save-user-btn">Save User Record</button>
+      </footer>
+    </form>
+  </section>
+</dialog>
